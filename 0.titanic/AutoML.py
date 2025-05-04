@@ -3,18 +3,16 @@ from sklearn.model_selection import train_test_split
 from supervised.automl import AutoML
 from sklearn.metrics import accuracy_score
 
-X = pd.read_csv('dataset/test.csv')
-y = pd.read_csv('dataset/gender_submission.csv')
+pd = pd.read_csv('dataset/train_modified.csv')
 
-
-X = X.drop("PassengerId", axis=1)
-y = y["PassengerId"]
+y = pd["Survived"]
+X = pd.drop(["Survived"], axis=1)
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
 
 automl = AutoML(
-    mode="Explain",
+    mode="Compete",
     explain_level=1
 )
 

@@ -11,7 +11,7 @@
         "Cabin",
         "Embarked"
     ],
-    "rows": 334,
+    "rows": 712,
     "cols": 10,
     "target_is_numeric": true,
     "columns_info": {
@@ -29,13 +29,14 @@
             "missing_values",
             "scale"
         ],
-        "SibSp": [],
+        "SibSp": [
+            "scale"
+        ],
         "Parch": [],
         "Ticket": [
             "text_transform"
         ],
         "Fare": [
-            "missing_values",
             "scale"
         ],
         "Cabin": [
@@ -44,14 +45,14 @@
             "many_categories"
         ],
         "Embarked": [
+            "missing_values",
             "categorical",
             "few_categories"
         ]
     },
-    "target_info": [
-        "scale"
-    ],
+    "target_info": [],
     "n_features": 10,
     "is_sample_weighted": false,
-    "is_fairness_applied": false
+    "is_fairness_applied": false,
+    "n_classes": 2
 }

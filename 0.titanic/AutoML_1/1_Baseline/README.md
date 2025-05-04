@@ -3,43 +3,93 @@
 [<< Go back](../README.md)
 
 
-## Baseline Regressor (Baseline)
+## Baseline Classifier (Baseline)
 - **n_jobs**: -1
-- **explain_level**: 2
+- **explain_level**: 1
 
 ## Validation
  - **validation_type**: split
  - **train_ratio**: 0.75
  - **shuffle**: True
+ - **stratify**: True
 
 ## Optimized metric
-rmse
+logloss
 
 ## Training time
 
 0.1 seconds
 
-### Metric details:
-| Metric   |         Score |
-|:---------|--------------:|
-| MAE      |    93.7952    |
-| MSE      | 11865.1       |
-| RMSE     |   108.927     |
-| R2       |    -0.0162928 |
-| MAPE     |     0.0877836 |
+## Metric details
+|           |    score |   threshold |
+|:----------|---------:|------------:|
+| logloss   | 0.662277 |  nan        |
+| auc       | 0.5      |  nan        |
+| f1        | 0.546939 |    0.338764 |
+| accuracy  | 0.376404 |    0.338764 |
+| precision | 0.376404 |    0.338764 |
+| recall    | 1        |    0.338764 |
+| mcc       | 0        |    0.338764 |
 
 
+## Metric details with threshold from accuracy metric
+|           |    score |   threshold |
+|:----------|---------:|------------:|
+| logloss   | 0.662277 |  nan        |
+| auc       | 0.5      |  nan        |
+| f1        | 0.546939 |    0.338764 |
+| accuracy  | 0.376404 |    0.338764 |
+| precision | 0.376404 |    0.338764 |
+| recall    | 1        |    0.338764 |
+| mcc       | 0        |    0.338764 |
+
+
+## Confusion matrix (at threshold=0.338764)
+|              |   Predicted as 0 |   Predicted as 1 |
+|:-------------|-----------------:|-----------------:|
+| Labeled as 0 |                0 |              111 |
+| Labeled as 1 |                0 |               67 |
 
 ## Learning curves
 ![Learning curves](learning_curves.png)
-## True vs Predicted
+## Confusion Matrix
 
-![True vs Predicted](true_vs_predicted.png)
+![Confusion Matrix](confusion_matrix.png)
 
 
-## Predicted vs Residuals
+## Normalized Confusion Matrix
 
-![Predicted vs Residuals](predicted_vs_residuals.png)
+![Normalized Confusion Matrix](confusion_matrix_normalized.png)
+
+
+## ROC Curve
+
+![ROC Curve](roc_curve.png)
+
+
+## Kolmogorov-Smirnov Statistic
+
+![Kolmogorov-Smirnov Statistic](ks_statistic.png)
+
+
+## Precision-Recall Curve
+
+![Precision-Recall Curve](precision_recall_curve.png)
+
+
+## Calibration Curve
+
+![Calibration Curve](calibration_curve_curve.png)
+
+
+## Cumulative Gains Curve
+
+![Cumulative Gains Curve](cumulative_gains_curve.png)
+
+
+## Lift Curve
+
+![Lift Curve](lift_curve.png)
 
 
 

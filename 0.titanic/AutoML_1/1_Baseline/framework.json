@@ -1,30 +1,30 @@
 {
-    "uid": "02a68e3d-4049-47a2-89a3-0814f96f0c01",
+    "uid": "929df4f3-ff6b-496c-a9c9-fc994c96547c",
     "name": "1_Baseline",
     "preprocessing": [
         {
-            "ml_task": "regression",
+            "ml_task": "binary_classification",
             "params": {
                 "columns_preprocessing": {},
                 "target_preprocessing": [
                     "na_exclude"
                 ],
-                "ml_task": "regression"
+                "ml_task": "binary_classification"
             }
         }
     ],
     "learners": [
         {
             "library_version": "1.6.1",
-            "algorithm_name": "Baseline Regressor",
+            "algorithm_name": "Baseline Classifier",
             "algorithm_short_name": "Baseline",
-            "uid": "10d21bd3-9aa6-4da1-831a-30b92d186192",
+            "uid": "8e010f94-ebe6-4c33-828e-29d30102d4aa",
             "params": {
                 "model_type": "Baseline",
-                "ml_task": "regression",
+                "ml_task": "binary_classification",
                 "n_jobs": -1,
                 "seed": 1235,
-                "explain_level": 2
+                "explain_level": 1
             },
             "name": "learner_fold_0"
         }
@@ -40,26 +40,27 @@
             "target_preprocessing": [
                 "na_exclude"
             ],
-            "ml_task": "regression"
+            "ml_task": "binary_classification"
         },
         "validation_strategy": {
             "validation_type": "split",
             "train_ratio": 0.75,
             "shuffle": true,
-            "X_path": "AutoML_2/X.data",
-            "y_path": "AutoML_2/y.data",
-            "results_path": "AutoML_2"
+            "stratify": true,
+            "X_path": "AutoML_1/X.data",
+            "y_path": "AutoML_1/y.data",
+            "results_path": "AutoML_1"
         },
         "learner": {
             "model_type": "Baseline",
-            "ml_task": "regression",
+            "ml_task": "binary_classification",
             "n_jobs": -1,
             "seed": 1235,
-            "explain_level": 2
+            "explain_level": 1
         },
         "automl_random_state": 1234,
-        "ml_task": "regression",
-        "explain_level": 2,
+        "ml_task": "binary_classification",
+        "explain_level": 1,
         "name": "1_Baseline",
         "status": "initialized",
         "final_loss": null,
@@ -71,9 +72,10 @@
         "1_Baseline/learner_fold_0.baseline"
     ],
     "predictions_fname": "1_Baseline/predictions_validation.csv",
-    "metric_name": "rmse",
-    "final_loss": "108.9270827314353",
-    "train_time": 0.09228301048278809,
+    "metric_name": "logloss",
+    "final_loss": "0.6622765135502295",
+    "train_time": 0.09593772888183594,
     "is_stacked": false,
-    "joblib_version": "1.4.2"
+    "joblib_version": "1.4.2",
+    "threshold": 0.33876404494382023
 }

@@ -5,65 +5,100 @@
 
 ## Random Forest
 - **n_jobs**: -1
-- **criterion**: squared_error
+- **criterion**: gini
 - **max_features**: 0.9
 - **min_samples_split**: 30
 - **max_depth**: 4
-- **eval_metric_name**: rmse
-- **explain_level**: 2
+- **eval_metric_name**: logloss
+- **explain_level**: 1
 
 ## Validation
  - **validation_type**: split
  - **train_ratio**: 0.75
  - **shuffle**: True
+ - **stratify**: True
 
 ## Optimized metric
-rmse
+logloss
 
 ## Training time
 
-3.2 seconds
+3.8 seconds
 
-### Metric details:
-| Metric   |         Score |
-|:---------|--------------:|
-| MAE      |    95.2056    |
-| MSE      | 12319.6       |
-| RMSE     |   110.994     |
-| R2       |    -0.0552191 |
-| MAPE     |     0.0889517 |
+## Metric details
+|           |    score |   threshold |
+|:----------|---------:|------------:|
+| logloss   | 0.366095 | nan         |
+| auc       | 0.888261 | nan         |
+| f1        | 0.8      |   0.244808  |
+| accuracy  | 0.837079 |   0.244808  |
+| precision | 0.74359  |   0.244808  |
+| recall    | 1        |   0.0741965 |
+| mcc       | 0.669351 |   0.244808  |
 
 
+## Metric details with threshold from accuracy metric
+|           |    score |   threshold |
+|:----------|---------:|------------:|
+| logloss   | 0.366095 |  nan        |
+| auc       | 0.888261 |  nan        |
+| f1        | 0.8      |    0.244808 |
+| accuracy  | 0.837079 |    0.244808 |
+| precision | 0.74359  |    0.244808 |
+| recall    | 0.865672 |    0.244808 |
+| mcc       | 0.669351 |    0.244808 |
+
+
+## Confusion matrix (at threshold=0.244808)
+|              |   Predicted as 0 |   Predicted as 1 |
+|:-------------|-----------------:|-----------------:|
+| Labeled as 0 |               91 |               20 |
+| Labeled as 1 |                9 |               58 |
 
 ## Learning curves
 ![Learning curves](learning_curves.png)
 
 ## Permutation-based Importance
 ![Permutation-based Importance](permutation_importance.png)
-## True vs Predicted
+## Confusion Matrix
 
-![True vs Predicted](true_vs_predicted.png)
-
-
-## Predicted vs Residuals
-
-![Predicted vs Residuals](predicted_vs_residuals.png)
+![Confusion Matrix](confusion_matrix.png)
 
 
+## Normalized Confusion Matrix
 
-## SHAP Importance
-![SHAP Importance](shap_importance.png)
+![Normalized Confusion Matrix](confusion_matrix_normalized.png)
 
-## SHAP Dependence plots
 
-### Dependence (Fold 1)
-![SHAP Dependence from Fold 1](learner_fold_0_shap_dependence.png)
+## ROC Curve
 
-## SHAP Decision plots
+![ROC Curve](roc_curve.png)
 
-### Top-10 Worst decisions (Fold 1)
-![SHAP worst decisions from fold 1](learner_fold_0_shap_worst_decisions.png)
-### Top-10 Best decisions (Fold 1)
-![SHAP best decisions from fold 1](learner_fold_0_shap_best_decisions.png)
+
+## Kolmogorov-Smirnov Statistic
+
+![Kolmogorov-Smirnov Statistic](ks_statistic.png)
+
+
+## Precision-Recall Curve
+
+![Precision-Recall Curve](precision_recall_curve.png)
+
+
+## Calibration Curve
+
+![Calibration Curve](calibration_curve_curve.png)
+
+
+## Cumulative Gains Curve
+
+![Cumulative Gains Curve](cumulative_gains_curve.png)
+
+
+## Lift Curve
+
+![Lift Curve](lift_curve.png)
+
+
 
 [<< Go back](../README.md)

@@ -1,14 +1,14 @@
-if (Name_joseph <= 0.749) and (Fare <= 62.669) and (Ticket_paris <= 0.369) then response: 1087.879 | based on 199 samples
+if (Sex > 0.5) and (Name_master <= 0.643) and (Cabin > 71.5) then class: 0 (proba: 86.58%) | based on 298 samples
 
-if (Name_joseph <= 0.749) and (Fare > 62.669) and (Age <= 59.0) then response: 1170.235 | based on 34 samples
+if (Sex <= 0.5) and (Pclass <= 2.5) and (Name_elizabeth <= 0.872) then class: 1 (proba: 97.87%) | based on 94 samples
 
-if (Name_joseph <= 0.749) and (Fare > 62.669) and (Age > 59.0) then response: 1020.333 | based on 6 samples
+if (Sex <= 0.5) and (Pclass > 2.5) and (Fare <= 23.35) then class: 1 (proba: 59.46%) | based on 74 samples
 
-if (Name_joseph <= 0.749) and (Fare <= 62.669) and (Ticket_paris > 0.369) then response: 1225.2 | based on 5 samples
+if (Sex > 0.5) and (Name_master <= 0.643) and (Cabin <= 71.5) then class: 0 (proba: 58.14%) | based on 43 samples
 
-if (Name_joseph > 0.749) and (Ticket_345572 <= 0.5) and (Fare <= 32.875) then response: 1269.75 | based on 4 samples
+if (Sex <= 0.5) and (Pclass > 2.5) and (Fare > 23.35) then class: 0 (proba: 100.0%) | based on 17 samples
 
-if (Name_joseph > 0.749) and (Ticket_345572 > 0.5) then response: 1152.0 | based on 1 samples
+if (Sex > 0.5) and (Name_master > 0.643) then class: 1 (proba: 100.0%) | based on 6 samples
 
-if (Name_joseph > 0.749) and (Ticket_345572 <= 0.5) and (Fare > 32.875) then response: 1190.0 | based on 1 samples
+if (Sex <= 0.5) and (Pclass <= 2.5) and (Name_elizabeth > 0.872) then class: 0 (proba: 50.0%) | based on 2 samples
 

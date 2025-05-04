@@ -1,7 +1,7 @@
 {
     "mode": "Explain",
-    "ml_task": "regression",
-    "results_path": "AutoML_2",
+    "ml_task": "binary_classification",
+    "results_path": "AutoML_1",
     "total_time_limit": 3600,
     "model_time_limit": null,
     "algorithms": [
@@ -14,17 +14,18 @@
     ],
     "train_ensemble": true,
     "stack_models": false,
-    "eval_metric": "rmse",
+    "eval_metric": "logloss",
     "validation_strategy": {
         "validation_type": "split",
         "train_ratio": 0.75,
         "shuffle": true,
-        "X_path": "AutoML_2/X.data",
-        "y_path": "AutoML_2/y.data",
-        "results_path": "AutoML_2"
+        "stratify": true,
+        "X_path": "AutoML_1/X.data",
+        "y_path": "AutoML_1/y.data",
+        "results_path": "AutoML_1"
     },
     "verbose": 1,
-    "explain_level": 2,
+    "explain_level": 1,
     "golden_features": false,
     "features_selection": false,
     "start_random_models": 1,
@@ -46,8 +47,11 @@
         "Ensemble"
     ],
     "fit_level": "finished",
-    "best_model": "1_Baseline",
+    "best_model": "Ensemble",
     "load_on_predict": [
-        "1_Baseline"
+        "3_Linear",
+        "4_Default_Xgboost",
+        "6_Default_RandomForest",
+        "Ensemble"
     ]
 }
